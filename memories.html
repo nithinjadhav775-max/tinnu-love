@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For Tinnu ❤️</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+font-family:Georgia,"Times New Roman",serif;
+background:#05030a;
+color:#fff;
+overflow-x:hidden;
+}
+body:before{
+content:"";
+position:fixed;inset:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(255,80,130,.16),transparent 30%),
+radial-gradient(circle at 80% 70%,rgba(150,70,255,.14),transparent 30%),
+linear-gradient(180deg,#08030d,#13030c,#05030a);
+z-index:-2;
+}
+.stars{
+position:fixed;inset:0;z-index:-1;
+background-image:
+radial-gradient(#fff 1px,transparent 1px),
+radial-gradient(#fff 1px,transparent 1px);
+background-size:90px 90px,140px 140px;
+background-position:10px 20px,50px 70px;
+opacity:.18;
+animation:drift 30s linear infinite;
+}
+@keyframes drift{to{background-position:200px 300px,300px 200px}}
+
+section{
+min-height:100vh;
+padding:90px 22px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero h1{
+font-size:clamp(48px,12vw,105px);
+letter-spacing:3px;
+animation:fadeUp 2s ease forwards;
+text-shadow:0 0 30px rgba(255,80,140,.6);
+}
+.hero p{
+margin-top:20px;
+font-size:20px;
+opacity:.75;
+animation:fadeUp 2.5s ease forwards;
+}
+.scroll{
+margin-top:70px;
+opacity:.55;
+animation:bounce 2s infinite;
+}
+@keyframes bounce{50%{transform:translateY(12px)}}
+
+.card{
+width:min(850px,94vw);
+padding:40px 28px;
+border:1px solid rgba(255,255,255,.12);
+border-radius:28px;
+background:rgba(255,255,255,.055);
+backdrop-filter:blur(14px);
+box-shadow:0 20px 80px rgba(0,0,0,.45);
+margin:25px auto;
+}
+h2{
+font-size:clamp(30px,7vw,55px);
+margin-bottom:22px;
+}
+.letter{
+font-size:20px;
+line-height:1.9;
+text-align:left;
+}
+.highlight{color:#ff8eb5}
+.date{
+font-size:48px;
+font-weight:bold;
+margin:20px;
+text-shadow:0 0 25px #ff477e;
+}
+.small{
+opacity:.7;
+font-size:16px;
+}
+
+audio{
+width:min(600px,90%);
+margin:20px 0;
+}
+
+.play-btn,.reveal-btn{
+border:0;
+padding:15px 25px;
+border-radius:50px;
+background:linear-gradient(135deg,#ff477e,#a63dff);
+color:white;
+font-size:16px;
+cursor:pointer;
+box-shadow:0 10px 35px rgba(255,50,120,.3);
+transition:.3s;
+}
+.play-btn:hover,.reveal-btn:hover{
+transform:scale(1.06);
+}
+
+.gallery{
+width:min(1000px,96vw);
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+}
+.photo{
+border-radius:22px;
+overflow:hidden;
+background:#100811;
+border:1px solid rgba(255,255,255,.1);
+box-shadow:0 15px 50px rgba(0,0,0,.5);
+}
+.photo img{
+width:100%;
+height:360px;
+display:block;
+object-fit:contain;
+background:#08050a;
+transition:transform .7s;
+}
+.photo:hover img{transform:scale(1.04)}
+
+.reason{
+font-size:22px;
+line-height:1.8;
+margin:12px 0;
+padding:18px;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.secret{
+display:none;
+margin-top:30px;
+animation:fadeUp 1.5s ease;
+}
+.secret.show{display:block}
+
+.final{
+min-height:110vh;
+position:relative;
+overflow:hidden;
+}
+.final .tiny{
+font-size:18px;
+opacity:.6;
+margin-bottom:30px;
+}
+.final .name{
+font-size:clamp(30px,8vw,70px);
+margin-bottom:30px;
+}
+.final .question{
+font-size:clamp(26px,6vw,52px);
+line-height:1.4;
+}
+.surname{
+margin-top:30px;
+font-size:clamp(55px,15vw,150px);
+font-weight:bold;
+letter-spacing:8px;
+color:#ff729d;
+text-shadow:
+0 0 10px #ff477e,
+0 0 40px #ff477e,
+0 0 90px rgba(255,71,126,.7);
+animation:heartbeat 2s infinite;
+}
+@keyframes heartbeat{
+0%,100%{transform:scale(1)}
+10%{transform:scale(1.04)}
+20%{transform:scale(1)}
+30%{transform:scale(1.08)}
+40%{transform:scale(1)}
+}
+.final-message{
+max-width:700px;
+margin:35px auto;
+font-size:21px;
+line-height:1.9;
+opacity:.9;
+}
+.forever{
+font-size:28px;
+margin-top:45px;
+color:#ffb0c8;
+}
+
+.heart{
+position:fixed;
+bottom:-30px;
+font-size:20px;
+opacity:.5;
+animation:floatHeart linear forwards;
+pointer-events:none;
+}
+@keyframes floatHeart{
+to{
+transform:translateY(-110vh) rotate(360deg);
+opacity:0;
+}
+}
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(35px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+footer{
+padding:40px 20px;
+text-align:center;
+opacity:.55;
+}
+
+@media(max-width:650px){
+.gallery{grid-template-columns:1fr}
+.photo img{height:430px}
+.card{padding:30px 20px}
+.letter{font-size:18px}
+}
+</style>
+
+<style id="cinematic-gallery">
+
+.gallery{
+width:min(1050px,94vw);
+display:grid;
+grid-template-columns:repeat(12,1fr);
+grid-auto-rows:230px;
+gap:18px;
+margin-top:35px;
+}
+
+.photo{
+position:relative;
+grid-column:span 4;
+grid-row:span 1;
+overflow:hidden;
+border-radius:26px;
+background:#09060c;
+border:1px solid rgba(255,255,255,.13);
+box-shadow:
+0 18px 50px rgba(0,0,0,.55),
+0 0 0 1px rgba(255,255,255,.025);
+transform:translateY(35px) rotate(0deg);
+opacity:0;
+transition:
+transform .8s cubic-bezier(.2,.8,.2,1),
+opacity .8s ease,
+box-shadow .5s ease;
+}
+
+.photo.photo-tall{
+grid-row:span 2;
+}
+
+.photo.photo-wide{
+grid-column:span 8;
+}
+
+.photo.show{
+opacity:1;
+transform:translateY(0) rotate(0deg);
+}
+
+.photo:nth-child(3n){
+transform:translateY(35px) rotate(-1deg);
+}
+
+.photo:nth-child(4n){
+transform:translateY(35px) rotate(1deg);
+}
+
+.photo.show:nth-child(3n){
+transform:translateY(0) rotate(-1deg);
+}
+
+.photo.show:nth-child(4n){
+transform:translateY(0) rotate(1deg);
+}
+
+.photo:hover{
+z-index:5;
+transform:scale(1.025) rotate(0deg)!important;
+box-shadow:
+0 30px 80px rgba(0,0,0,.7),
+0 0 35px rgba(255,75,130,.22);
+}
+
+.photo img{
+width:100%;
+height:100%;
+display:block;
+object-fit:cover;
+transition:transform 1s cubic-bezier(.2,.8,.2,1),filter .7s;
+}
+
+.photo:hover img{
+transform:scale(1.08);
+filter:saturate(1.08) brightness(1.04);
+}
+
+.photo:after{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
+180deg,
+transparent 48%,
+rgba(0,0,0,.05) 58%,
+rgba(0,0,0,.82) 100%
+);
+pointer-events:none;
+}
+
+.photo span{
+position:absolute;
+z-index:2;
+left:20px;
+right:20px;
+bottom:18px;
+font-family:Georgia,"Times New Roman",serif;
+font-size:16px;
+color:white;
+letter-spacing:.3px;
+text-shadow:0 2px 12px #000;
+opacity:.95;
+}
+
+.photo:before{
+content:"❤️";
+position:absolute;
+z-index:3;
+right:17px;
+top:15px;
+font-size:17px;
+opacity:.85;
+filter:drop-shadow(0 2px 5px #000);
+}
+
+@media(max-width:700px){
+
+.gallery{
+grid-template-columns:1fr;
+grid-auto-rows:430px;
+gap:20px;
+width:94vw;
+}
+
+.photo,
+.photo.photo-tall,
+.photo.photo-wide{
+grid-column:span 1;
+grid-row:span 1;
+}
+
+.photo img{
+object-fit:cover;
+}
+
+.photo span{
+font-size:17px;
+bottom:20px;
+left:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="stars"></div>
+
+<!-- HERO -->
+<section class="hero">
+<h1>For Tinnu ❤️</h1>
+<p>A little corner of my heart...</p>
+<div class="scroll">↓ come inside our little world ↓</div>
+</section>
+
+<!-- INTRO -->
+<section>
+<div class="card">
+<h2>Hey, Naina ❤️</h2>
+<p class="letter">
+I don't know exactly when you became such an important part of my life.
+Somewhere between our conversations, your smile, and all those little moments,
+you became someone I never want to lose.
+<br><br>
+You are not just <span class="highlight">Tinnu</span> to me.
+You are a feeling, a memory, a smile and a part of my everyday thoughts.
+</p>
+</div>
+</section>
+
+<!-- LETTER -->
+<section>
+<div class="card">
+<h2>A Letter For You 💌</h2>
+<div class="letter">
+Dear Tinnu,
+<br><br>
+I don't know how to explain everything I feel for you in just a few words.
+Sometimes I just look at you and think about how lucky I am that you came
+into my life.
+<br><br>
+I love the way you talk, even when you're talking about the smallest things.
+Honestly, I could listen to you for hours and still want to hear more.
+<br><br>
+Maybe I don't always know how to express everything perfectly,
+but one thing I know for sure...
+<br><br>
+<strong>I never stop loving you.</strong>
+<br><br>
+No matter how much time passes or how many things change,
+there will always be a special place in my heart that belongs to you.
+<br><br>
+— Nithin ❤️
+</div>
+</div>
+</section>
+
+<!-- OUR SONG -->
+<section>
+<div class="card">
+<h2>Our Little Song 🎵</h2>
+<p class="small">Put this on and just stay here for a while.</p>
+
+<audio id="music" controls preload="metadata" playsinline>
+<source src="love-song.mp3" type="audio/mpeg">
+</audio>
+
+<br>
+
+<button class="play-btn" onclick="playSong()">❤️ Play Our Song</button>
+
+<p id="musicStatus" class="small" style="margin-top:15px"></p>
+</div>
+</section>
+
+<!-- THINGS I LOVE -->
+<section>
+<div class="card">
+<h2>Things I Love About You 🫶</h2>
+
+<div class="reason">The way you talk ❤️</div>
+<div class="reason">The little things you do without even realizing them.</div>
+<div class="reason">The way you make ordinary moments feel special.</div>
+<div class="reason">Your smile.</div>
+<div class="reason">And simply... the fact that you're you.</div>
+
+</div>
+</section>
+
+<!-- SPECIAL DATE -->
+<section>
+<div class="card">
+<h2>One Special Date ⏳</h2>
+<div class="date">04 • 01 • 2026</div>
+<p class="small">
+A date that deserves its own little place in our story.
+</p>
+</div>
+</section>
+
+<!-- PHOTOS -->
+<section>
+<h2>Our Little Memories 📸</h2>
+
+<div class="gallery">
+
+<div class="photo photo-tall reveal"><img src="photos/photo1.jpg" alt="Our memory 1"><span>Our little moment ❤️</span></div>
+<div class="photo photo-wide reveal"><img src="photos/photo2.jpg" alt="Our memory 2"><span>A memory worth keeping</span></div>
+<div class="photo reveal"><img src="photos/photo3.jpg" alt="Our memory 3"><span>Just you & me</span></div>
+<div class="photo photo-tall reveal"><img src="photos/photo4.jpg" alt="Our memory 4"><span>One of my favourites ❤️</span></div>
+<div class="photo reveal"><img src="photos/photo5.jpg" alt="Our memory 5"><span>That smile...</span></div>
+<div class="photo photo-wide reveal"><img src="photos/photo6.jpg" alt="Our memory 6"><span>Another little memory</span></div>
+<div class="photo reveal"><img src="photos/photo7.jpg" alt="Our memory 7"><span>Forever in my memories</span></div>
+<div class="photo photo-tall reveal"><img src="photos/photo8.jpg" alt="Our memory 8"><span>My favourite kind of happiness</span></div>
+<div class="photo photo-wide reveal"><img src="photos/photo9.jpg" alt="Our memory 9"><span>Us ❤️</span></div>
+<div class="photo reveal"><img src="photos/photo10.jpg" alt="Our memory 10"><span>A little piece of us</span></div>
+<div class="photo photo-tall reveal"><img src="photos/photo11.jpg" alt="Our memory 11"><span>Always special</span></div>
+<div class="photo reveal"><img src="photos/photo12.jpg" alt="Our memory 12"><span>And this story continues...</span></div>
+
+</div>
+
+<!-- SECRET -->
+<section>
+<div class="card">
+<h2>One More Thing... 🔐</h2>
+<p class="letter">
+There is one thought that always comes to my mind whenever I look at you.
+</p>
+
+<br>
+
+<button class="reveal-btn" onclick="revealHeart()">
+Open My Heart ❤️
+</button>
+
+<div id="secret" class="secret">
+
+<p class="final-message">
+I don't know what the future has written for us.
+I don't know where life will take us.
+<br><br>
+But if I could choose one person to keep making memories with,
+I'd choose you.
+<br><br>
+Every single time.
+</p>
+
+</div>
+</div>
+</section>
+
+<!-- FINAL CINEMATIC REVEAL -->
+<section class="final">
+
+<p class="tiny">Naina...</p>
+
+<div class="name">There's just one little thought...</div>
+
+<div class="question">
+Whenever I look at you,
+I sometimes wonder...
+<br><br>
+<strong>“Pata nahi kab tumhara surname...”</strong>
+</div>
+
+<div class="surname">RATHOD</div>
+
+<p class="final-message">
+...ban jayega. ❤️
+</p>
+
+<p class="final-message">
+Maybe it's just a silly thought.
+Maybe it's a dream.
+But every time I imagine it,
+I can't help but smile.
+</p>
+
+<div class="forever">
+I never stop loving you. ❤️
+</div>
+
+</section>
+
+<footer>
+Made with ❤️ by Nithin
+<br>
+For Tinnu — Naina
+</footer>
+
+<script>
+
+function playSong(){
+const music=document.getElementById("music");
+const status=document.getElementById("musicStatus");
+
+music.play()
+.then(()=>{
+status.textContent="Playing our little song ❤️";
+})
+.catch(()=>{
+status.textContent="Tap the play button on the music player to start ❤️";
+});
+}
+
+function revealHeart(){
+const box=document.getElementById("secret");
+box.classList.add("show");
+}
+
+function createHeart(){
+const h=document.createElement("div");
+h.className="heart";
+h.innerHTML=["❤️","💕","💗","💖","✨"][Math.floor(Math.random()*5)];
+h.style.left=Math.random()*100+"vw";
+h.style.animationDuration=(5+Math.random()*6)+"s";
+h.style.fontSize=(14+Math.random()*18)+"px";
+document.body.appendChild(h);
+
+setTimeout(()=>h.remove(),12000);
+}
+
+setInterval(createHeart,900);
+
+</script>
+
+
+<script id="gallery-animation">
+const galleryPhotos = document.querySelectorAll(".photo");
+
+const galleryObserver = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+            galleryObserver.unobserve(entry.target);
+        }
+    });
+},{threshold:.12});
+
+galleryPhotos.forEach(photo=>galleryObserver.observe(photo));
+</script>
+
+</body>
+</html>

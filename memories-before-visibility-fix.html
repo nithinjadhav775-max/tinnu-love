@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tinnu ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#05030a;
+  color:white;
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
+}
+
+/* BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,40,100,.18),transparent 30%),
+    radial-gradient(circle at 80% 70%,rgba(150,40,255,.15),transparent 35%),
+    linear-gradient(135deg,#05030a,#130510,#05030a);
+}
+
+/* STARS */
+#stars{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:-2;
+  pointer-events:none;
+}
+
+/* FLOATING HEARTS */
+#hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:20;
+  overflow:hidden;
+}
+
+.heart{
+  position:absolute;
+  bottom:-40px;
+  animation:floatHeart linear forwards;
+  opacity:.8;
+  filter:drop-shadow(0 0 10px rgba(255,50,120,.7));
+}
+
+@keyframes floatHeart{
+  from{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+  15%{opacity:.9}
+  to{
+    transform:translateY(-115vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:30px 20px;
+  position:relative;
+}
+
+.hero-content{
+  max-width:850px;
+  animation:heroIn 2s ease;
+}
+
+@keyframes heroIn{
+  from{
+    opacity:0;
+    transform:translateY(40px) scale(.95);
+  }
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+.small{
+  letter-spacing:5px;
+  text-transform:uppercase;
+  font-size:12px;
+  opacity:.7;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:clamp(55px,13vw,130px);
+  line-height:.9;
+  background:linear-gradient(90deg,#fff,#ff9fbd,#fff);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-shadow:0 0 40px rgba(255,70,130,.25);
+}
+
+.hero p{
+  margin:30px auto;
+  max-width:600px;
+  font-size:20px;
+  line-height:1.8;
+  opacity:.85;
+}
+
+.glow-btn{
+  border:1px solid rgba(255,255,255,.25);
+  background:rgba(255,40,100,.12);
+  color:white;
+  padding:15px 28px;
+  border-radius:50px;
+  font-size:16px;
+  cursor:pointer;
+  backdrop-filter:blur(12px);
+  transition:.3s;
+  box-shadow:0 0 30px rgba(255,40,100,.15);
+}
+
+.glow-btn:hover{
+  transform:translateY(-3px) scale(1.04);
+  background:rgba(255,40,100,.25);
+  box-shadow:0 0 40px rgba(255,40,100,.4);
+}
+
+/* SECTIONS */
+section{
+  padding:100px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  font-size:clamp(35px,7vw,65px);
+  margin-bottom:20px;
+}
+
+.section-subtitle{
+  text-align:center;
+  opacity:.65;
+  margin-bottom:55px;
+}
+
+/* LOVE LETTER */
+.letter{
+  max-width:750px;
+  margin:auto;
+  padding:45px;
+  border-radius:25px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 30px 100px rgba(0,0,0,.4);
+  backdrop-filter:blur(15px);
+  line-height:2;
+  font-size:18px;
+}
+
+.letter p{
+  margin-bottom:20px;
+}
+
+.signature{
+  text-align:right;
+  font-size:25px;
+  color:#ff9fbd;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.photo-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:25px;
+  background:#111;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+
+.photo-card img{
+  display:block;
+  width:100%;
+  height:430px;
+  object-fit:cover;
+  transition:1s;
+}
+
+.photo-card:hover img{
+  transform:scale(1.08);
+}
+
+.photo-caption{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:40px 20px 20px;
+  background:linear-gradient(transparent,rgba(0,0,0,.9));
+  font-size:18px;
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(60px);
+  transition:1s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:none;
+}
+
+/* MUSIC */
+.music-box{
+  text-align:center;
+  padding:45px 20px;
+  border-radius:30px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.music-icon{
+  font-size:55px;
+  margin-bottom:20px;
+  animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.12)}
+}
+
+/* QUESTION */
+.question{
+  text-align:center;
+  padding:80px 20px;
+}
+
+.question h2{
+  font-size:clamp(40px,8vw,75px);
+  margin-bottom:25px;
+}
+
+.answer-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:30px;
+}
+
+.yes{
+  background:linear-gradient(135deg,#ff397c,#ff174f);
+  border:none;
+}
+
+.no{
+  background:rgba(255,255,255,.08);
+}
+
+/* SECRET */
+.secret{
+  text-align:center;
+}
+
+.password-box{
+  max-width:400px;
+  margin:30px auto;
+}
+
+.password-box input{
+  width:100%;
+  padding:16px 20px;
+  border-radius:50px;
+  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.08);
+  color:white;
+  outline:none;
+  text-align:center;
+  font-size:16px;
+  margin-bottom:15px;
+}
+
+#secretMessage{
+  display:none;
+  max-width:650px;
+  margin:30px auto;
+  padding:35px;
+  border-radius:25px;
+  background:rgba(255,50,100,.1);
+  border:1px solid rgba(255,100,150,.3);
+  line-height:1.8;
+  font-size:18px;
+}
+
+/* FINAL */
+.final{
+  min-height:70vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.final h2{
+  font-size:clamp(45px,9vw,90px);
+}
+
+.final p{
+  margin:25px auto;
+  max-width:650px;
+  line-height:1.8;
+  font-size:18px;
+  opacity:.8;
+}
+
+.big-heart{
+  font-size:90px;
+  display:block;
+  animation:heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  15%{transform:scale(1.2)}
+  30%{transform:scale(1)}
+  45%{transform:scale(1.12)}
+}
+
+footer{
+  text-align:center;
+  padding:50px 20px;
+  opacity:.5;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+  section{
+    padding:75px 16px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .photo-card img{
+    height:420px;
+  }
+
+  .letter{
+    padding:28px 22px;
+    font-size:16px;
+  }
+
+  .hero p{
+    font-size:17px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<canvas id="stars"></canvas>
+<div id="hearts"></div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="small">A little corner of my heart</div>
+
+    <h1>For Tinnu ❤️</h1>
+
+    <p>
+      Out of all the people in this world,
+      somehow my heart found you.
+      And honestly... I'm grateful it did.
+    </p>
+
+    <button class="glow-btn" onclick="scrollToSection('letter')">
+      Open My Heart ↓
+    </button>
+  </div>
+</header>
+
+<!-- LOVE LETTER -->
+<section id="letter" class="reveal">
+
+  <h2 class="section-title">A Letter For You 💌</h2>
+
+  <p class="section-subtitle">
+    Something I wanted you to read slowly.
+  </p>
+
+  <div class="letter">
+
+    <p>
+      Tinnu,
+    </p>
+
+    <p>
+      I don't know if words can ever properly explain
+      what you mean to me. But I still wanted to try.
+    </p>
+
+    <p>
+      There are so many people we meet in life,
+      but only a few somehow become special without
+      even trying.
+    </p>
+
+    <p>
+      You became one of those people for me.
+    </p>
+
+    <p>
+      Your smile, your little habits, the conversations,
+      the random moments... somehow they stay in my mind
+      longer than they probably should.
+    </p>
+
+    <p>
+      I don't want this website to be perfect.
+      I just want it to remind you that somewhere,
+      there is someone who genuinely cares about you.
+    </p>
+
+    <p>
+      And whenever you look back at these memories,
+      I hope they make you smile.
+    </p>
+
+    <p class="signature">
+      Always yours ❤️
+    </p>
+
+  </div>
+
+</section>
+
+<!-- MUSIC -->
+<section class="reveal">
+
+  <h2 class="section-title">Our Song 🎵</h2>
+
+  <p class="section-subtitle">
+    A little song for a little piece of my heart.
+  </p>
+
+  <div class="music-box">
+
+    <div class="music-icon" id="musicIcon">🎵</div>
+
+    <p id="musicStatus" style="margin-bottom:25px;">
+      Tap the button and let our song begin ❤️
+    </p>
+
+    <button class="glow-btn" id="musicButton" onclick="toggleMusic()"
+      style="min-width:220px;font-size:18px;">
+      ▶️ Play Our Song
+    </button>
+
+    <div style="
+      margin-top:25px;
+      width:100%;
+      max-width:500px;
+      margin-left:auto;
+      margin-right:auto;
+    ">
+
+      <input
+        id="musicProgress"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+        step="0.1"
+        style="width:100%;accent-color:#ff397c;"
+        oninput="seekMusic(this.value)"
+      >
+
+    </div>
+
+    <p id="musicTime" style="
+      margin-top:10px;
+      font-size:13px;
+      opacity:.6;
+    ">
+      0:00 / 0:00
+    </p>
+
+    <audio
+      id="music"
+      preload="auto"
+      playsinline
+      src="love-song.mp3">
+    </audio>
+
+  </div>
+
+</section>
+
+<!-- MEMORIES -->
+<section class="reveal">
+
+  <h2 class="section-title">Our Little Memories 📸</h2>
+
+  <p class="section-subtitle">
+    Eight moments. One beautiful story.
+  </p>
+
+  <div class="gallery">
+
+    <div class="photo-card reveal">
+      <img src="photos/photo1.jpg">
+      <div class="photo-caption">The beginning ❤️</div>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="photos/photo2.jpg">
+      <div class="photo-caption">A moment worth remembering</div>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="photos/photo3.jpg">
+      <div class="photo-caption">That smile ❤️</div>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="photos/photo4.jpg">
+      <div class="photo-caption">Just us</div>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="photos/photo5.jpg">
+      <div class="photo-caption">One of my favourites</div>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="photos/photo6.jpg">
+      <div class="photo-caption">A beautiful memory</div>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="photos/photo7.jpg">
+      <div class="photo-caption">Forever in my mind</div>
+    </div>
+
+    <div class="photo-card reveal">
+      <img src="photos/photo8.jpg">
+      <div class="photo-caption">And many more to come ❤️</div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- QUESTION -->
+<section class="question reveal">
+
+  <h2>One Little Question... 💍</h2>
+
+  <p>
+    If I asked you to stay by my side,
+    would you?
+  </p>
+
+  <div class="answer-buttons">
+
+    <button class="glow-btn yes" onclick="yesAnswer()">
+      YES ❤️
+    </button>
+
+    <button class="glow-btn no" id="noButton" onclick="noAnswer()">
+      Maybe 😌
+    </button>
+
+  </div>
+
+  <div id="answer" style="
+    display:none;
+    margin-top:35px;
+    font-size:25px;
+    color:#ff9fbd;
+  ">
+    I knew it... ❤️🥹
+  </div>
+
+</section>
+
+<!-- SECRET -->
+<section class="secret reveal">
+
+  <h2 class="section-title">Secret Place 🔐</h2>
+
+  <p class="section-subtitle">
+    There is something hidden here...
+  </p>
+
+  <div class="password-box">
+
+    <input
+      id="password"
+      type="password"
+      placeholder="Enter our secret word"
+    >
+
+    <button class="glow-btn" onclick="unlockSecret()">
+      Unlock ❤️
+    </button>
+
+  </div>
+
+  <div id="secretMessage">
+
+    <h2 style="margin-bottom:20px;">
+      You found it! ❤️
+    </h2>
+
+    <p>
+      No matter how many pages this website has,
+      my favourite part will always be the person
+      reading it right now.
+    </p>
+
+    <p style="margin-top:20px;">
+      You are my favourite notification,
+      my favourite memory,
+      and one of the most beautiful chapters
+      in my story.
+    </p>
+
+  </div>
+
+</section>
+
+<!-- FINAL -->
+<section class="final reveal">
+
+  <div>
+
+    <span class="big-heart">❤️</span>
+
+    <h2>Thank You, Tinnu</h2>
+
+    <p>
+      For every smile.
+      Every conversation.
+      Every little memory.
+      And every moment that made life a little more beautiful.
+    </p>
+
+    <button class="glow-btn" onclick="createHeartExplosion()">
+      One Last Surprise ✨
+    </button>
+
+  </div>
+
+</section>
+
+<footer>
+  Made with love ❤️
+</footer>
+
+<script>
+
+/* SMOOTH SCROLL */
+function scrollToSection(id){
+  document.getElementById(id).scrollIntoView({
+    behavior:"smooth"
+  });
+}
+
+/* FLOATING HEARTS */
+function createHeart(){
+
+  const container=document.getElementById("hearts");
+
+  const heart=document.createElement("div");
+
+  heart.className="heart";
+
+  const symbols=["❤️","💕","💗","💖","💘","🌹"];
+
+  heart.textContent=
+    symbols[Math.floor(Math.random()*symbols.length)];
+
+  heart.style.left=Math.random()*100+"%";
+
+  heart.style.fontSize=
+    (14+Math.random()*25)+"px";
+
+  heart.style.animationDuration=
+    (5+Math.random()*7)+"s";
+
+  container.appendChild(heart);
+
+  setTimeout(()=>{
+    heart.remove();
+  },12000);
+}
+
+setInterval(createHeart,700);
+
+
+/* STAR FIELD */
+const canvas=document.getElementById("stars");
+const ctx=canvas.getContext("2d");
+
+let stars=[];
+
+function resizeCanvas(){
+
+  canvas.width=window.innerWidth;
+  canvas.height=window.innerHeight;
+
+  stars=[];
+
+  for(let i=0;i<180;i++){
+
+    stars.push({
+      x:Math.random()*canvas.width,
+      y:Math.random()*canvas.height,
+      r:Math.random()*1.6+.2,
+      a:Math.random()
+    });
+
+  }
+}
+
+function drawStars(){
+
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+
+  stars.forEach(s=>{
+
+    s.a+=
+      (Math.random()-.5)*.03;
+
+    if(s.a<.2)s.a=.2;
+    if(s.a>1)s.a=1;
+
+    ctx.beginPath();
+
+    ctx.arc(
+      s.x,
+      s.y,
+      s.r,
+      0,
+      Math.PI*2
+    );
+
+    ctx.fillStyle=
+      "rgba(255,255,255,"+s.a+")";
+
+    ctx.fill();
+
+  });
+
+  requestAnimationFrame(drawStars);
+}
+
+resizeCanvas();
+drawStars();
+
+window.addEventListener("resize",resizeCanvas);
+
+
+/* SCROLL REVEAL */
+const observer=
+new IntersectionObserver(
+  entries=>{
+
+    entries.forEach(entry=>{
+
+      if(entry.isIntersecting){
+
+        entry.target.classList.add("show");
+
+      }
+
+    });
+
+  },
+  {
+    threshold:.12
+  }
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(el=>observer.observe(el));
+
+
+/* YES BUTTON */
+function yesAnswer(){
+
+  document.getElementById("answer").style.display="block";
+
+  for(let i=0;i<25;i++){
+
+    setTimeout(createHeart,i*80);
+
+  }
+
+}
+
+
+/* MAYBE BUTTON */
+function noAnswer(){
+
+  const button=
+    document.getElementById("noButton");
+
+  const messages=[
+    "Think again 😌",
+    "Are you sure? ❤️",
+    "Really? 🥺",
+    "Try YES 😏",
+    "I know you want to ❤️"
+  ];
+
+  button.textContent=
+    messages[
+      Math.floor(Math.random()*messages.length)
+    ];
+
+  button.style.transform=
+    "translate("+
+    (Math.random()*80-40)+"px,"+
+    (Math.random()*50-25)+"px)";
+
+}
+
+
+/* SECRET PASSWORD */
+function unlockSecret(){
+
+  const password=
+    document.getElementById("password").value
+    .trim()
+    .toLowerCase();
+
+  /*
+    Change the password below.
+    Example: tinnu
+  */
+
+  const secretPassword="tinnu";
+
+  if(password===secretPassword){
+
+    document.getElementById("secretMessage").style.display="block";
+
+    for(let i=0;i<15;i++){
+      setTimeout(createHeart,i*100);
+    }
+
+  }else{
+
+    alert("Wrong secret word ❤️ Try again.");
+
+  }
+
+}
+
+
+/* FINAL HEART EXPLOSION */
+function createHeartExplosion(){
+
+  for(let i=0;i<80;i++){
+
+    setTimeout(()=>{
+
+      const heart=
+        document.createElement("div");
+
+      heart.className="heart";
+
+      heart.textContent=
+        ["❤️","💖","💕","💗","💘","🌹","✨"]
+        [Math.floor(Math.random()*7)];
+
+      heart.style.left=
+        (40+Math.random()*20)+"%";
+
+      heart.style.bottom=
+        (35+Math.random()*15)+"%";
+
+      heart.style.fontSize=
+        (15+Math.random()*35)+"px";
+
+      heart.style.animationDuration=
+        (2+Math.random()*3)+"s";
+
+      document
+        .getElementById("hearts")
+        .appendChild(heart);
+
+      setTimeout(()=>{
+        heart.remove();
+      },6000);
+
+    },i*30);
+
+  }
+
+}
+
+
+
+/* CUSTOM MUSIC PLAYER */
+
+const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+const musicIcon = document.getElementById("musicIcon");
+const musicProgress = document.getElementById("musicProgress");
+const musicTime = document.getElementById("musicTime");
+
+function formatTime(seconds){
+
+  if(!Number.isFinite(seconds)){
+    return "0:00";
+  }
+
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+
+  return mins + ":" + String(secs).padStart(2,"0");
+}
+
+function toggleMusic(){
+
+  if(!music){
+    return;
+  }
+
+  if(music.paused){
+
+    music.volume = 1.0;
+
+    music.play()
+      .then(()=>{
+
+        musicButton.innerHTML = "⏸️ Pause Our Song";
+        musicStatus.innerHTML = "Playing our song... ❤️🎵";
+        musicIcon.innerHTML = "🎶";
+
+      })
+      .catch((error)=>{
+
+        console.log("Audio error:", error);
+
+        musicStatus.innerHTML =
+          "Tap again to play the song 🎵";
+
+      });
+
+  }else{
+
+    music.pause();
+
+    musicButton.innerHTML = "▶️ Play Our Song";
+    musicStatus.innerHTML = "Song paused ❤️";
+    musicIcon.innerHTML = "🎵";
+
+  }
+
+}
+
+function seekMusic(value){
+
+  if(
+    music &&
+    Number.isFinite(music.duration) &&
+    music.duration > 0
+  ){
+
+    music.currentTime =
+      (Number(value) / 100) * music.duration;
+
+  }
+
+}
+
+if(music){
+
+  music.addEventListener("loadedmetadata",()=>{
+
+    musicTime.textContent =
+      "0:00 / " + formatTime(music.duration);
+
+  });
+
+  music.addEventListener("timeupdate",()=>{
+
+    if(
+      Number.isFinite(music.duration) &&
+      music.duration > 0
+    ){
+
+      musicProgress.value =
+        (music.currentTime / music.duration) * 100;
+
+      musicTime.textContent =
+        formatTime(music.currentTime) +
+        " / " +
+        formatTime(music.duration);
+
+    }
+
+  });
+
+  music.addEventListener("play",()=>{
+
+    musicButton.innerHTML =
+      "⏸️ Pause Our Song";
+
+    musicStatus.innerHTML =
+      "Playing our song... ❤️🎵";
+
+    musicIcon.innerHTML = "🎶";
+
+  });
+
+  music.addEventListener("pause",()=>{
+
+    musicButton.innerHTML =
+      "▶️ Play Our Song";
+
+    musicIcon.innerHTML = "🎵";
+
+  });
+
+  music.addEventListener("ended",()=>{
+
+    musicButton.innerHTML =
+      "▶️ Play Again ❤️";
+
+    musicStatus.innerHTML =
+      "Our song ended... play it again ❤️";
+
+    musicIcon.innerHTML = "🎵";
+
+  });
+
+  music.addEventListener("error",()=>{
+
+    musicStatus.innerHTML =
+      "Could not load love-song.mp3 ❌";
+
+    musicButton.innerHTML =
+      "🎵 Music Error";
+
+  });
+
+}
+
+
+
+/* CUSTOM MUSIC PLAYER */
+
+const music = document.getElementById("music");
+const musicButton = document.getElementById("musicButton");
+const musicStatus = document.getElementById("musicStatus");
+const musicIcon = document.getElementById("musicIcon");
+const musicProgress = document.getElementById("musicProgress");
+const musicTime = document.getElementById("musicTime");
+
+function formatTime(seconds){
+
+  if(!Number.isFinite(seconds)){
+    return "0:00";
+  }
+
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+
+  return mins + ":" + String(secs).padStart(2,"0");
+}
+
+function toggleMusic(){
+
+  if(!music){
+    return;
+  }
+
+  if(music.paused){
+
+    music.volume = 1.0;
+
+    music.play()
+      .then(()=>{
+
+        musicButton.innerHTML = "⏸️ Pause Our Song";
+        musicStatus.innerHTML = "Playing our song... ❤️🎵";
+        musicIcon.innerHTML = "🎶";
+
+      })
+      .catch((error)=>{
+
+        console.log("Audio error:", error);
+
+        musicStatus.innerHTML =
+          "Tap again to play the song 🎵";
+
+      });
+
+  }else{
+
+    music.pause();
+
+    musicButton.innerHTML = "▶️ Play Our Song";
+    musicStatus.innerHTML = "Song paused ❤️";
+    musicIcon.innerHTML = "🎵";
+
+  }
+
+}
+
+function seekMusic(value){
+
+  if(
+    music &&
+    Number.isFinite(music.duration) &&
+    music.duration > 0
+  ){
+
+    music.currentTime =
+      (Number(value) / 100) * music.duration;
+
+  }
+
+}
+
+if(music){
+
+  music.addEventListener("loadedmetadata",()=>{
+
+    musicTime.textContent =
+      "0:00 / " + formatTime(music.duration);
+
+  });
+
+  music.addEventListener("timeupdate",()=>{
+
+    if(
+      Number.isFinite(music.duration) &&
+      music.duration > 0
+    ){
+
+      musicProgress.value =
+        (music.currentTime / music.duration) * 100;
+
+      musicTime.textContent =
+        formatTime(music.currentTime) +
+        " / " +
+        formatTime(music.duration);
+
+    }
+
+  });
+
+  music.addEventListener("play",()=>{
+
+    musicButton.innerHTML =
+      "⏸️ Pause Our Song";
+
+    musicStatus.innerHTML =
+      "Playing our song... ❤️🎵";
+
+    musicIcon.innerHTML = "🎶";
+
+  });
+
+  music.addEventListener("pause",()=>{
+
+    musicButton.innerHTML =
+      "▶️ Play Our Song";
+
+    musicIcon.innerHTML = "🎵";
+
+  });
+
+  music.addEventListener("ended",()=>{
+
+    musicButton.innerHTML =
+      "▶️ Play Again ❤️";
+
+    musicStatus.innerHTML =
+      "Our song ended... play it again ❤️";
+
+    musicIcon.innerHTML = "🎵";
+
+  });
+
+  music.addEventListener("error",()=>{
+
+    musicStatus.innerHTML =
+      "Could not load love-song.mp3 ❌";
+
+    musicButton.innerHTML =
+      "🎵 Music Error";
+
+  });
+
+}
+
+
+/* TRY TO RESUME MUSIC AFTER USER INTERACTION */
+document.addEventListener(
+  "click",
+  ()=>{
+    const music=document.getElementById("music");
+
+    if(music && music.paused){
+
+      /* Browser autoplay restrictions may prevent this.
+         User can press the audio play button manually. */
+
+    }
+  },
+  {once:true}
+);
+
+</script>
+
+</body>
+</html>

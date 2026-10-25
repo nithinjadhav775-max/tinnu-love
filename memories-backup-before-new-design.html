@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Love For You ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: white;
+    font-family: Georgia, serif;
+    background:
+        radial-gradient(circle at 50% 10%, #4b164b 0%, #18091d 35%, #050207 75%, #020103 100%);
+    overflow-x: hidden;
+}
+
+.heart {
+    position: fixed;
+    bottom: -40px;
+    color: rgba(255,120,190,.45);
+    font-size: 20px;
+    animation: float 9s linear infinite;
+    pointer-events: none;
+}
+
+.h1 { left: 8%; animation-delay: 0s; }
+.h2 { left: 25%; animation-delay: 3s; }
+.h3 { left: 55%; animation-delay: 1.5s; }
+.h4 { left: 78%; animation-delay: 5s; }
+.h5 { left: 90%; animation-delay: 2s; }
+
+@keyframes float {
+    from {
+        transform: translateY(0) scale(.7);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) scale(1.4) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    max-width: 850px;
+    margin: auto;
+    padding: 75px 22px 100px;
+    text-align: center;
+}
+
+.small {
+    letter-spacing: 5px;
+    font-size: 12px;
+    opacity: .5;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(45px, 12vw, 75px);
+    font-weight: normal;
+    margin: 22px 0 10px;
+    text-shadow:
+        0 0 15px rgba(255,100,180,.5),
+        0 0 45px rgba(255,60,160,.3);
+}
+
+.intro {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 19px;
+    line-height: 1.9;
+    opacity: .8;
+}
+
+.big-love {
+    margin: 55px auto;
+    padding: 40px 25px;
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 0 50px rgba(255,60,160,.12),
+        inset 0 0 30px rgba(255,255,255,.025);
+
+    backdrop-filter: blur(12px);
+}
+
+.big-love .heart-icon {
+    font-size: 60px;
+    animation: beat 1.6s infinite;
+}
+
+@keyframes beat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+.big-love h2 {
+    font-size: 30px;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+.big-love p {
+    font-size: 18px;
+    line-height: 1.9;
+    opacity: .8;
+}
+
+.card {
+    margin-top: 28px;
+    padding: 30px 25px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.09);
+    transition: .4s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,.075);
+    box-shadow: 0 15px 50px rgba(255,50,150,.12);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.card h2 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.card p {
+    font-size: 17px;
+    line-height: 1.9;
+    opacity: .75;
+}
+
+.final {
+    margin-top: 65px;
+    padding: 45px 25px;
+}
+
+.final .line {
+    font-size: 21px;
+    line-height: 2;
+    opacity: .85;
+}
+
+.final .special {
+    margin-top: 25px;
+    font-size: 28px;
+    line-height: 1.6;
+    text-shadow: 0 0 25px rgba(255,80,170,.5);
+}
+
+.signature {
+    margin-top: 35px;
+    font-size: 18px;
+    opacity: .65;
+    letter-spacing: 2px;
+}
+
+button {
+    margin-top: 45px;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.25);
+    background: rgba(255,255,255,.07);
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 30px rgba(255,80,170,.35);
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart h1">❤️</div>
+<div class="heart h2">♡</div>
+<div class="heart h3">❤️</div>
+<div class="heart h4">♡</div>
+<div class="heart h5">❤️</div>
+
+<div class="container">
+
+    <div class="small">Something I want you to know</div>
+
+    <h1>My Love For You ❤️</h1>
+
+    <div class="intro">
+        I don't need photographs to remember you.<br>
+        Somehow, every little thing about you has already
+        found a permanent place in my heart.
+    </div>
+
+    <div class="big-love">
+
+        <div class="heart-icon">❤️</div>
+
+        <h2>I Love You More Than You Know</h2>
+
+        <p>
+            And the strangest thing is...
+            my love for you doesn't stay the same.
+        </p>
+
+        <p>
+            It keeps growing.
+            Every day.
+            A little more.
+            And then a little more again.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-icon">👀</div>
+
+        <h2>Your Beautiful Eyes</h2>
+
+        <p>
+            Maybe that's why your name feels so perfect to me.
+            Naina.
+        </p>
+
+        <p>
+            Your eyes were one of the first things I noticed...
+            and somehow they still have the power to make me
+            forget what I was about to say.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-icon">💌</div>
+
+        <h2>Our Little World</h2>
+
+        <p>
+            Those classroom days.
+            Those little letters.
+            Those secret looks.
+            Those silly plans.
+        </p>
+
+        <p>
+            They may have looked like ordinary moments to everyone else,
+            but to me they were pieces of a world that belonged only to us.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-icon">😂❤️</div>
+
+        <h2>Even Your Endless Talking</h2>
+
+        <p>
+            You can talk about the most random things...
+            and somehow I still want to listen.
+        </p>
+
+        <p>
+            Because when it's you talking,
+            even the most ordinary words become my favorite sound.
+        </p>
+
+    </div>
+
+    <div class="card">
+
+        <div class="card-icon">🫶</div>
+
+        <h2>Why I Keep Falling For You</h2>
+
+        <p>
+            Your smile.
+            Your expressions.
+            Your eyes.
+            Your voice.
+            Your little habits.
+            Your craziness.
+            Your way of being you.
+        </p>
+
+        <p>
+            I didn't fall in love with one thing about you.
+            I fell in love with all the little things
+            that make you <i>you</i>.
+        </p>
+
+    </div>
+
+    <div class="final">
+
+        <div class="line">
+            And if you ever wonder...
+        </div>
+
+        <div class="special">
+            “Does anyone love me more than he does?”
+        </div>
+
+        <div class="line">
+            I honestly don't know what everyone else feels.
+            But I know what I feel.
+        </div>
+
+        <div class="special">
+            I love you with everything I have. ❤️
+        </div>
+
+        <div class="line">
+            And tomorrow,
+            I'll probably love you even more than I do today.
+        </div>
+
+        <div class="signature">
+            — Papa ❤️
+        </div>
+
+        <button onclick="location.href='story.html'">
+            ← Back to Our Story
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+</html>

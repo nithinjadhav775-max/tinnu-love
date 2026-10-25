@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>If You Ever Feel Sad ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    opacity: 0;
+    animation: pageReveal 2s ease forwards;
+    min-height: 100vh;
+    color: white;
+    font-family: Georgia, serif;
+
+    background:
+        radial-gradient(circle at 50% 20%,
+        #40183f 0%,
+        #170a1b 40%,
+        #050207 80%,
+        #020103 100%);
+
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 750px;
+    margin: auto;
+    padding: 80px 24px;
+    text-align: center;
+}
+
+.small {
+    font-size: 12px;
+    letter-spacing: 5px;
+    opacity: .5;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 25px 0;
+    animation: softAppear 2s ease .5s both;
+    font-size: clamp(42px, 11vw, 70px);
+    font-weight: normal;
+
+    text-shadow:
+        0 0 15px rgba(255,100,180,.5),
+        0 0 45px rgba(255,60,160,.3);
+}
+
+.heart {
+    font-size: 65px;
+    margin: 25px 0;
+
+    animation: heartbeat 1.6s infinite;
+}
+
+@keyframes pageReveal {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+.comfort-line {
+    margin-top: -5px;
+    margin-bottom: 35px;
+    font-size: 16px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: softAppear 2s ease 1.4s both;
+    text-shadow: 0 0 15px rgba(255,100,180,.35);
+}
+
+.message {
+    margin-top: 40px;
+    animation: softAppear 2s ease 1s both;
+    padding: 38px 25px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.055);
+    border: 1px solid rgba(255,255,255,.12);
+
+    box-shadow:
+        0 0 45px rgba(255,60,160,.10),
+        inset 0 0 25px rgba(255,255,255,.02);
+
+    backdrop-filter: blur(12px);
+}
+
+.message p {
+    font-size: 18px;
+    line-height: 2;
+    opacity: .85;
+    margin: 0 0 25px;
+}
+
+.message .important {
+    font-size: 24px;
+    line-height: 1.7;
+    opacity: 1;
+
+    text-shadow:
+        0 0 20px rgba(255,100,180,.45);
+}
+
+.message .love {
+    font-size: 28px;
+    margin-top: 30px;
+}
+
+.signature {
+    margin-top: 45px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    opacity: .65;
+}
+
+button {
+    margin-top: 45px;
+    animation: buttonGlow 2.5s ease-in-out infinite;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,.25);
+
+    background: rgba(255,255,255,.07);
+    color: white;
+
+    font-family: Georgia, serif;
+    font-size: 15px;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+#heartRain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.rain-heart {
+    position: absolute;
+    top: -30px;
+    font-size: 14px;
+    opacity: .25;
+    animation: heartFall linear forwards;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes heartFall {
+    from {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .35;
+    }
+
+    to {
+        transform: translateY(110vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+button:hover {
+    transform: scale(1.07);
+
+    box-shadow:
+        0 0 30px rgba(255,80,170,.4);
+}
+
+
+#secretMemory {
+    display: none;
+    margin: 35px 0;
+    padding: 35px 24px;
+    border-radius: 28px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,100,180,.10),
+            rgba(255,255,255,.035)
+        );
+    border: 1px solid rgba(255,150,210,.18);
+    box-shadow:
+        0 0 45px rgba(255,70,170,.12),
+        inset 0 0 30px rgba(255,255,255,.025);
+    animation: secretMemoryReveal 1.8s ease forwards;
+}
+
+.secret-memory-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    animation: heartbeat 1.8s infinite;
+}
+
+.secret-memory-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: .45;
+    margin-bottom: 18px;
+}
+
+.secret-memory-title {
+    font-size: 30px;
+    line-height: 1.35;
+    color: #ffd6eb;
+    text-shadow: 0 0 20px rgba(255,100,180,.45);
+    margin-bottom: 25px;
+}
+
+#secretMemory p {
+    font-size: 17px;
+    line-height: 1.9;
+    opacity: .82;
+}
+
+.secret-memory-highlight {
+    font-size: 22px !important;
+    line-height: 1.7 !important;
+    color: #ffd6eb;
+    opacity: 1 !important;
+    text-shadow: 0 0 18px rgba(255,100,180,.4);
+}
+
+.secret-memory-final {
+    margin-top: 28px;
+    font-size: 17px;
+    line-height: 1.8;
+    opacity: .8;
+}
+
+.secret-memory-final strong {
+    font-size: 23px;
+    color: #ffd6eb;
+    text-shadow: 0 0 18px rgba(255,100,180,.4);
+}
+
+#keepSecret {
+    margin-top: 30px;
+}
+
+#secretKept {
+    display: none;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #ffd6eb;
+    animation: softAppear 1s ease forwards;
+}
+#romanticScene {
+    display: none;
+    margin-top: 35px;
+    padding: 30px 15px 40px;
+    border-radius: 30px;
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(255,100,180,.13),
+            rgba(20,5,25,.2) 55%,
+            rgba(0,0,0,.25)
+        );
+    border: 1px solid rgba(255,160,215,.14);
+    box-shadow:
+        0 0 60px rgba(255,70,170,.13),
+        inset 0 0 35px rgba(255,255,255,.02);
+    animation: romanticReveal 2s ease forwards;
+    overflow: hidden;
+}
+
+.scene-stars {
+    font-size: 13px;
+    letter-spacing: 4px;
+    opacity: .35;
+    margin-bottom: 18px;
+    animation: starsTwinkle 3s ease-in-out infinite;
+}
+
+.scene-title {
+    font-size: 25px;
+    line-height: 1.5;
+    color: #ffd6eb;
+    text-shadow: 0 0 20px rgba(255,100,180,.5);
+}
+
+.couple-scene {
+    position: relative;
+    height: 260px;
+    margin: 15px auto 5px;
+    max-width: 480px;
+    overflow: hidden;
+}
+
+.moon {
+    position: absolute;
+    top: 15px;
+    right: 18%;
+    font-size: 55px;
+    opacity: .55;
+    text-shadow: 0 0 25px rgba(255,220,245,.35);
+}
+
+.couple {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    width: 250px;
+    height: 210px;
+    transform: translateX(-50%);
+}
+
+.person {
+    position: absolute;
+    bottom: 0;
+    width: 110px;
+    height: 190px;
+}
+
+.person-left {
+    left: 10px;
+    animation: moveCloserLeft 3s ease-in-out forwards;
+}
+
+.person-right {
+    right: 10px;
+    animation: moveCloserRight 3s ease-in-out forwards;
+}
+
+.head {
+    position: absolute;
+    top: 5px;
+    left: 31px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #d69a83;
+    font-size: 0;
+    z-index: 3;
+    box-shadow: 0 0 12px rgba(255,180,160,.18);
+}
+
+.hair {
+    position: absolute;
+    top: 0;
+    left: 27px;
+    width: 56px;
+    height: 32px;
+    border-radius: 50% 50% 30% 30%;
+    background: #171017;
+    z-index: 4;
+}
+
+.body {
+    position: absolute;
+    top: 48px;
+    left: 15px;
+    width: 80px;
+    height: 135px;
+    border-radius: 45px 45px 15px 15px;
+    background: linear-gradient(
+        180deg,
+        #642d55,
+        #291526
+    );
+}
+
+.arm {
+    position: absolute;
+    top: 80px;
+    width: 72px;
+    height: 18px;
+    border-radius: 20px;
+    background: #c98776;
+    z-index: 5;
+}
+
+.person-left .arm {
+    right: -28px;
+    transform: rotate(-18deg);
+}
+
+.person-right .arm {
+    left: -28px;
+    transform: rotate(18deg);
+}
+
+.person-right .hair {
+    background: #251823;
+}
+
+.kiss-heart {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    color: #ff9dcc;
+    font-size: 25px;
+    text-shadow:
+        0 0 15px rgba(255,100,180,.8),
+        0 0 35px rgba(255,70,170,.5);
+    z-index: 10;
+    animation: kissHeart 1s ease 3s forwards;
+}
+
+.kiss-glow {
+    position: absolute;
+    left: 50%;
+    top: 45px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    transform: translateX(-50%) scale(0);
+    background: rgba(255,120,190,.18);
+    box-shadow: 0 0 45px 25px rgba(255,80,170,.14);
+    animation: kissGlow 1.2s ease 3s forwards;
+}
+
+.scene-message {
+    margin-top: 5px;
+    font-size: 18px;
+    line-height: 1.9;
+    color: #f5dce9;
+    opacity: 0;
+    animation: messageAppear 1.5s ease 3.8s forwards;
+}
+
+.scene-final {
+    margin-top: 25px;
+    font-size: 16px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: messageAppear 1.5s ease 5s forwards;
+}
+
+.scene-final strong {
+    font-size: 23px;
+    color: #ffd1e7;
+    text-shadow: 0 0 18px rgba(255,100,180,.5);
+}
+
+@keyframes romanticReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes moveCloserLeft {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(38px);
+    }
+}
+
+@keyframes moveCloserRight {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-38px);
+    }
+}
+
+@keyframes kissHeart {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+
+    60% {
+        transform: translateX(-50%) scale(1.4);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes kissGlow {
+    0% {
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes starsTwinkle {
+    0%, 100% {
+        opacity: .25;
+    }
+
+    50% {
+        opacity: .6;
+    }
+}
+
+
+@keyframes secretMemoryReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+#secretMessage {
+    display: none;
+    position: relative;
+    margin: 25px auto 10px;
+    padding: 30px 22px;
+    border-radius: 25px;
+    background: rgba(255,255,255,.045);
+    border: 1px solid rgba(255,255,255,.1);
+    animation: secretReveal 1.5s ease forwards;
+}
+
+.love-letter {
+    margin: 5px auto 30px;
+}
+
+.envelope {
+    font-size: 58px;
+    margin-bottom: 15px;
+    animation: envelopeFloat 2s ease-in-out infinite;
+}
+
+.letter {
+    padding: 30px 24px;
+    border-radius: 20px;
+    background: rgba(255,245,250,.08);
+    border: 1px solid rgba(255,180,220,.2);
+    box-shadow:
+        0 0 35px rgba(255,80,170,.12),
+        inset 0 0 30px rgba(255,255,255,.025);
+}
+
+.letter-title {
+    font-size: 27px;
+    margin-bottom: 25px;
+    color: #ffd6eb;
+    text-shadow: 0 0 18px rgba(255,100,180,.5);
+}
+
+
+.choose-section {
+    margin: 35px 0 30px;
+    padding: 25px 18px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.choose-question {
+    font-size: 13px !important;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: .5 !important;
+}
+
+.choose-main {
+    font-size: 23px !important;
+    line-height: 1.7 !important;
+    color: #ffd6eb;
+    opacity: 1 !important;
+    text-shadow: 0 0 18px rgba(255,100,180,.4);
+}
+
+.choice-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.choice-buttons button {
+    margin-top: 15px;
+}
+
+#maybeLove {
+    position: relative;
+}
+
+#loveAnswer {
+    display: none;
+    margin-top: 25px;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #ffd6eb;
+    animation: softAppear 1s ease forwards;
+}
+
+#secretMessage p {
+    font-size: 17px;
+    line-height: 1.9;
+    opacity: .85;
+}
+
+.secret-heart {
+    font-size: 45px;
+    margin-bottom: 10px;
+    animation: heartbeat 1.6s infinite;
+}
+
+.secret-important {
+    font-size: 23px !important;
+    opacity: 1 !important;
+    text-shadow: 0 0 18px rgba(255,100,180,.4);
+}
+
+@keyframes envelopeFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+}
+
+.romantic-line {
+    font-size: 22px !important;
+    line-height: 1.7 !important;
+    color: #ffd6eb;
+    opacity: 1 !important;
+    text-shadow: 0 0 18px rgba(255,100,180,.45);
+}
+
+.letter-signature {
+    margin-top: 28px;
+    font-size: 19px;
+    font-style: italic;
+    opacity: .8;
+}
+
+@keyframes secretReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    opacity: .4;
+
+    animation: float 9s linear infinite;
+    pointer-events: none;
+}
+
+.a { left: 10%; animation-delay: 1s; }
+.b { left: 30%; animation-delay: 4s; }
+.c { left: 60%; animation-delay: 2s; }
+.d { left: 85%; animation-delay: 5s; }
+
+@keyframes buttonGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(255,80,170,0);
+    }
+
+    50% {
+        box-shadow: 0 0 28px rgba(255,80,170,.35);
+    }
+}
+
+@keyframes softAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    from {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: .5;
+    }
+
+    to {
+        transform: translateY(-110vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="heartRain"></div>
+
+<div class="floating-heart a">❤️</div>
+<div class="floating-heart b">♡</div>
+<div class="floating-heart c">❤️</div>
+<div class="floating-heart d">♡</div>
+
+<div class="container">
+
+    <div class="small">
+        Open this whenever you need it
+    </div>
+
+    <h1>If You Ever Feel Sad</h1>
+
+    <div class="heart">
+        ❤️
+    </div>
+
+    <div class="comfort-line">
+        Stay here for a little while…<br>
+        you don't have to be okay right now. ❤️
+    </div>
+
+    <div class="message">
+
+        <p>
+            Tinnu, if you're reading this because
+            today isn't your best day...
+            come here for a moment.
+        </p>
+
+        <p>
+            Take a breath.
+            Forget everything around you for a little while.
+            And remember one thing.
+        </p>
+
+        <p class="important">
+            You are loved.
+            More than you probably realize.
+        </p>
+
+        <p>
+            I know I can't be beside you every second.
+            I can't take away every bad day.
+            And I can't promise that life will always be easy.
+        </p>
+
+        <p>
+            But I can promise you this...
+        </p>
+
+        <p class="important">
+            You will always have someone
+            who cares about your smile,
+            your happiness,
+            your dreams,
+            and your heart.
+        </p>
+
+        <p>
+            And yes...
+            that's me. ❤️
+        </p>
+
+        <p>
+            So please don't ever think
+            that you are not enough.
+        </p>
+
+        <p>
+            You are beautiful.
+            You are special.
+            You are precious to me.
+        </p>
+
+        <p class="love">
+            And I love you.
+            More today than yesterday,
+            and even more tomorrow. ❤️
+        </p>
+
+        <div class="signature">
+            — Papa ❤️
+        </div>
+
+    </div>
+
+    <button id="oneMore">
+        One more thing… ❤️
+    </button>
+
+    <div id="secretMessage">
+        <div class="love-letter">
+            <div class="envelope">💌</div>
+            <div class="letter">
+                <div class="letter-title">For You ❤️</div>
+
+                <p>
+                    If I could be beside you right now,
+                    I wouldn't say much.
+                </p>
+
+                <p>
+                    I'd just sit next to you,
+                    hold your hand,
+                    and remind you that you never have to
+                    face everything alone.
+                </p>
+
+                <p class="romantic-line">
+                    In a world full of people,
+                    somehow my heart found you.
+                </p>
+
+                <p>
+                    And if I had to choose you again,
+                    I'd choose you.
+                    Every single time.
+                </p>
+
+                <div class="letter-signature">
+                    Always yours ❤️
+                </div>
+            </div>
+        </div>
+
+        <div class="secret-heart">💗</div>
+        <div class="choose-section">
+            <p class="choose-question">
+                One little question...
+            </p>
+
+            <p class="choose-main">
+                If you could choose again,<br>
+                would you still choose me? ❤️
+            </p>
+
+            <div class="choice-buttons">
+                <button id="yesLove">Yes, always ❤️</button>
+                <button id="maybeLove">Let me think…</button>
+            </div>
+
+            <div id="loveAnswer">
+                I knew your heart would find its way back to mine. ❤️
+            </div>
+        </div>
+
+        <div id="secretMemory">
+
+            <div class="secret-memory-icon">🤫</div>
+
+            <div class="secret-memory-label">
+                A little secret
+            </div>
+
+            <div class="secret-memory-title">
+                There's something<br>
+                I never told you...
+            </div>
+
+            <p>
+                Somewhere between our little conversations,
+                silly moments, smiles, and all the memories
+                we've made...
+            </p>
+
+            <p class="secret-memory-highlight">
+                You quietly became one of my
+                favorite parts of life. ❤️
+            </p>
+
+            <p>
+                I don't know exactly when it happened.
+                I just know that one day,
+                seeing your name made my heart smile.
+            </p>
+
+            <div class="secret-memory-final">
+                And maybe that's my favorite secret...
+                <br><br>
+                <strong>It's always been you. ❤️</strong>
+            </div>
+
+            <button id="keepSecret">
+                Keep this between us 🤫❤️
+            </button>
+
+            <div id="secretKept">
+                Our little secret is safe here. 💕
+            </div>
+            <div id="romanticScene">
+
+                <div class="scene-stars">✦　·　✧　·　✦　·　✧</div>
+
+                <div class="scene-title">
+                    Then let this be<br>
+                    our little secret... ❤️
+                </div>
+
+                <div class="couple-scene">
+
+                    <div class="moon">☾</div>
+
+                    <div class="couple">
+                        <div class="person person-left">
+                            <div class="head">●</div>
+                            <div class="hair"></div>
+                            <div class="body"></div>
+                            <div class="arm"></div>
+                        </div>
+
+                        <div class="person person-right">
+                            <div class="head">●</div>
+                            <div class="hair"></div>
+                            <div class="body"></div>
+                            <div class="arm"></div>
+                        </div>
+
+                        <div class="kiss-heart">♥</div>
+                    </div>
+
+                    <div class="kiss-glow"></div>
+
+                </div>
+
+                <div class="scene-message">
+                    Some moments don't need words.
+                    <br>
+                    They just need the right person. ❤️
+                </div>
+
+                <div class="scene-final">
+                    And in this moment...
+                    <br>
+                    <strong>it's you and me. ❤️</strong>
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <p>
+            No matter how difficult today feels,
+            please remember…
+        </p>
+        <p class="secret-important">
+            Tomorrow is another chance<br>
+            to smile again. ❤️
+        </p>
+        <p>
+            And until then,<br>
+            I'm right here in this little corner of your world.
+        </p>
+    </div>
+
+    <button onclick="location.href='story.html'">
+        ← Back to Our Story
+    </button>
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+document.getElementById("oneMore").addEventListener("click", function() {
+    const secret = document.getElementById("secretMessage");
+    secret.style.display = "block";
+    this.style.display = "none";
+});
+</script>
+
+
+<script>
+const heartRain = document.getElementById("heartRain");
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "rain-heart";
+    heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (6 + Math.random() * 6) + "s";
+
+    heartRain.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 13000);
+}
+
+setInterval(createHeart, 700);
+</script>
+
+
+<script>
+const yesLove = document.getElementById("yesLove");
+const maybeLove = document.getElementById("maybeLove");
+const loveAnswer = document.getElementById("loveAnswer");
+
+if (yesLove) {
+    yesLove.addEventListener("click", function() {
+        loveAnswer.style.display = "block";
+
+        setTimeout(() => {
+            const secretMemory = document.getElementById("secretMemory");
+
+            if (secretMemory) {
+                secretMemory.style.display = "block";
+                secretMemory.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }
+        }, 1200);
+
+        for (let i = 0; i < 14; i++) {
+            setTimeout(() => {
+                const heart = document.createElement("div");
+                heart.className = "rain-heart";
+                heart.textContent = "❤️";
+                heart.style.left = (35 + Math.random() * 30) + "vw";
+                heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+                document.getElementById("heartRain").appendChild(heart);
+
+                setTimeout(() => heart.remove(), 7000);
+            }, i * 100);
+        }
+    });
+}
+
+if (maybeLove) {
+    maybeLove.addEventListener("mouseenter", function() {
+        this.style.transform =
+            "translate(" +
+            (Math.random() * 80 - 40) + "px," +
+            (Math.random() * 40 - 20) + "px)";
+    });
+}
+
+const keepSecret = document.getElementById("keepSecret");
+const secretKept = document.getElementById("secretKept");
+
+if (keepSecret) {
+    keepSecret.addEventListener("click", function() {
+        secretKept.style.display = "block";
+        this.style.display = "none";
+
+        setTimeout(() => {
+            const scene = document.getElementById("romanticScene");
+
+            if (scene) {
+                scene.style.display = "block";
+
+                scene.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }
+        }, 1000);
+    });
+}
+</script>

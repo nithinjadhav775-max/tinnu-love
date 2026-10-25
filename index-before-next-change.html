@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story ❤️</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Georgia,serif;
+    background:#02030b;
+}
+
+.scene{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 50% 10%,#20245b 0%,#090b24 38%,#010208 78%);
+}
+
+/* STARS */
+.stars{
+    position:absolute;
+    inset:0;
+    background-image:
+        radial-gradient(2px 2px at 10% 20%,white,transparent),
+        radial-gradient(1px 1px at 20% 70%,white,transparent),
+        radial-gradient(2px 2px at 35% 30%,white,transparent),
+        radial-gradient(1px 1px at 50% 15%,white,transparent),
+        radial-gradient(2px 2px at 67% 40%,white,transparent),
+        radial-gradient(1px 1px at 80% 20%,white,transparent),
+        radial-gradient(2px 2px at 90% 65%,white,transparent),
+        radial-gradient(1px 1px at 75% 80%,white,transparent),
+        radial-gradient(2px 2px at 45% 85%,white,transparent);
+    animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.45}
+    to{opacity:1}
+}
+
+/* MOON */
+.moon{
+    position:absolute;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#fff7dc;
+    box-shadow:0 0 35px rgba(255,245,190,.65);
+    right:12%;
+    top:10%;
+    opacity:.9;
+}
+
+/* CLOUDS */
+.cloud{
+    position:absolute;
+    width:260px;
+    height:75px;
+    background:rgba(255,255,255,.12);
+    border-radius:100px;
+    filter:blur(5px);
+}
+
+.cloud:before,
+.cloud:after{
+    content:"";
+    position:absolute;
+    background:inherit;
+    border-radius:50%;
+}
+
+.cloud:before{
+    width:120px;
+    height:120px;
+    left:40px;
+    bottom:15px;
+}
+
+.cloud:after{
+    width:150px;
+    height:150px;
+    right:25px;
+    bottom:5px;
+}
+
+.c1{
+    top:25%;
+    left:-300px;
+    animation:cloudMove 18s linear infinite;
+}
+
+.c2{
+    top:48%;
+    left:-400px;
+    transform:scale(1.4);
+    opacity:.6;
+    animation:cloudMove 24s linear infinite 4s;
+}
+
+.c3{
+    top:68%;
+    left:-350px;
+    transform:scale(.9);
+    opacity:.5;
+    animation:cloudMove 20s linear infinite 2s;
+}
+
+@keyframes cloudMove{
+    from{left:-400px}
+    to{left:110%}
+}
+
+/* AIRPLANE */
+.airplane{
+    position:absolute;
+    top:20%;
+    left:-180px;
+    font-size:65px;
+    transform:rotate(-5deg);
+    filter:drop-shadow(0 0 12px rgba(255,255,255,.35));
+    animation:fly 6s ease-in-out forwards;
+    z-index:5;
+}
+
+@keyframes fly{
+    0%{left:-180px;top:20%}
+    70%{left:62%;top:25%}
+    100%{left:72%;top:22%}
+}
+
+/* PLANE TRAIL */
+.trail{
+    position:absolute;
+    width:260px;
+    height:3px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.45),transparent);
+    top:25%;
+    left:-250px;
+    filter:blur(2px);
+    animation:trail 6s ease-in-out forwards;
+}
+
+@keyframes trail{
+    0%{left:-250px}
+    70%{left:48%}
+    100%{left:58%}
+}
+
+/* JUMPING PERSON */
+.person{
+    position:absolute;
+    left:74%;
+    top:24%;
+    font-size:48px;
+    opacity:0;
+    z-index:6;
+    transform:rotate(20deg);
+    animation:jump 2.8s ease-in forwards 6s;
+}
+
+@keyframes jump{
+    0%{
+        opacity:0;
+        top:24%;
+        transform:rotate(20deg) scale(1);
+    }
+    10%{opacity:1}
+    100%{
+        opacity:1;
+        top:88%;
+        transform:rotate(80deg) scale(.65);
+    }
+}
+
+/* FALLING HEARTS */
+.heart{
+    position:absolute;
+    color:#ff6b9d;
+    font-size:20px;
+    opacity:0;
+    animation:fallHeart 4s linear forwards;
+    z-index:4;
+}
+
+.h1{left:20%;animation-delay:7s}
+.h2{left:38%;animation-delay:7.5s}
+.h3{left:55%;animation-delay:8s}
+.h4{left:70%;animation-delay:8.5s}
+.h5{left:82%;animation-delay:9s}
+
+@keyframes fallHeart{
+    0%{
+        top:35%;
+        opacity:0;
+        transform:scale(.5);
+    }
+    20%{opacity:1}
+    100%{
+        top:110%;
+        opacity:0;
+        transform:scale(1.5) rotate(180deg);
+    }
+}
+
+/* OPENING MESSAGE */
+.message{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:25px;
+    opacity:0;
+    animation:showMessage 2s ease forwards 9.5s;
+    z-index:10;
+}
+
+@keyframes showMessage{
+    from{opacity:0;transform:translateY(30px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.message h1{
+    color:white;
+    font-size:clamp(32px,8vw,68px);
+    text-shadow:0 0 25px rgba(255,105,150,.7);
+    margin-bottom:15px;
+}
+
+.message p{
+    color:#ffdbe8;
+    font-size:clamp(17px,4vw,25px);
+    margin-bottom:35px;
+}
+
+/* ENTER BUTTON */
+.enter{
+    border:none;
+    padding:15px 38px;
+    border-radius:40px;
+    background:linear-gradient(135deg,#ff4f8b,#ff8fb3);
+    color:white;
+    font-size:18px;
+    font-family:Georgia,serif;
+    cursor:pointer;
+    box-shadow:0 0 25px rgba(255,79,139,.65);
+    transition:.3s;
+}
+
+.enter:hover{
+    transform:scale(1.08);
+    box-shadow:0 0 40px rgba(255,79,139,.9);
+}
+
+.enter:active{
+    transform:scale(.95);
+}
+
+/* FINAL TRANSITION */
+.fade{
+    position:absolute;
+    inset:0;
+    background:#000;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity 1.2s;
+    z-index:100;
+}
+
+.fade.active{
+    opacity:1;
+}
+
+@media(max-width:600px){
+    .airplane{
+        font-size:50px;
+    }
+
+    .person{
+        font-size:38px;
+    }
+
+    .moon{
+        width:65px;
+        height:65px;
+    }
+}
+
+/* CINEMATIC JUMP EFFECT */
+.scene.shake{
+    animation:cameraShake .7s ease-in-out;
+}
+
+@keyframes cameraShake{
+    0%{transform:translate(0,0)}
+    20%{transform:translate(-7px,5px)}
+    40%{transform:translate(7px,-5px)}
+    60%{transform:translate(-5px,-3px)}
+    80%{transform:translate(5px,4px)}
+    100%{transform:translate(0,0)}
+}
+
+/* WIND STREAKS */
+.wind{
+    position:absolute;
+    width:140px;
+    height:3px;
+    border-radius:10px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.7));
+    opacity:0;
+    z-index:3;
+}
+
+.w1{top:30%;left:15%;animation:wind 2s linear 6.2s forwards}
+.w2{top:42%;left:65%;animation:wind 1.7s linear 6.5s forwards}
+.w3{top:55%;left:25%;animation:wind 2s linear 6.8s forwards}
+.w4{top:67%;left:70%;animation:wind 1.8s linear 7s forwards}
+.w5{top:78%;left:40%;animation:wind 2s linear 7.2s forwards}
+
+@keyframes wind{
+    0%{
+        opacity:0;
+        transform:translateX(0) scaleX(.4);
+    }
+    20%{opacity:.8}
+    100%{
+        opacity:0;
+        transform:translateX(-300px) scaleX(1.5);
+    }
+}
+
+/* FALLING GLOW */
+.fallGlow{
+    position:absolute;
+    left:50%;
+    top:35%;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#fff;
+    box-shadow:0 0 25px 12px rgba(255,120,170,.6);
+    opacity:0;
+    z-index:2;
+    animation:fallGlow 3s ease-in 7s forwards;
+}
+
+@keyframes fallGlow{
+    0%{
+        opacity:0;
+        transform:translate(-50%,0) scale(1);
+    }
+    15%{opacity:1}
+    100%{
+        opacity:0;
+        transform:translate(-50%,400px) scale(.2);
+    }
+}
+
+/* DRAMATIC MESSAGE ZOOM */
+.message.dramatic{
+    animation:dramaticMessage 1.5s ease forwards;
+}
+
+@keyframes dramaticMessage{
+    0%{
+        opacity:0;
+        transform:scale(1.5);
+        filter:blur(10px);
+    }
+    60%{
+        opacity:1;
+        transform:scale(.98);
+        filter:blur(0);
+    }
+    100%{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+}
+
+.person{
+    width:190px;
+    height:250px;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 0 35px rgba(255,120,170,.75);
+    background:#111;
+}
+
+.person img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+@media(max-width:600px){
+    .person{
+        width:145px;
+        height:200px;
+    }
+}
+</style>
+
+<style>
+.airplane{
+    position:absolute !important;
+    left:50% !important;
+    top:18% !important;
+    width:260px !important;
+    height:140px !important;
+    z-index:30 !important;
+    opacity:1 !important;
+    transform:translateX(-50%) rotate(-5deg) !important;
+    animation:finalPlane 6s ease-in-out forwards !important;
+}
+
+.airplane img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:contain !important;
+    display:block !important;
+    filter:drop-shadow(0 8px 15px rgba(0,0,0,.65));
+}
+
+@keyframes finalPlane{
+    0%{
+        left:50%;
+        top:18%;
+        transform:translateX(-50%) rotate(-5deg) scale(.75);
+    }
+    20%{
+        left:50%;
+        top:20%;
+        transform:translateX(-50%) rotate(-5deg) scale(1);
+    }
+    55%{
+        left:68%;
+        top:17%;
+        transform:translateX(-50%) rotate(-7deg) scale(.9);
+    }
+    100%{
+        left:110%;
+        top:5%;
+        transform:translateX(-50%) rotate(-8deg) scale(.7);
+    }
+}
+
+@media(max-width:600px){
+    .airplane{
+        width:210px !important;
+        height:115px !important;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="scene">
+
+    <div class="stars"></div>
+    <div class="moon"></div>
+
+    <div class="cloud c1"></div>
+    <div class="cloud c2"></div>
+    <div class="cloud c3"></div>
+
+    
+<div class="trail"></div>
+
+<div class="wind w1"></div>
+<div class="wind w2"></div>
+<div class="wind w3"></div>
+<div class="wind w4"></div>
+<div class="wind w5"></div>
+
+<div class="fallGlow"></div>
+
+
+    <div class="airplane"><img src="airplane.jpg" alt="Airplane"></div>
+
+    <div class="person" id="fallingPerson"><img src="couple-kiss.jpg" alt="Romantic couple kissing"></div>
+
+    <div class="heart h1">❤️</div>
+    <div class="heart h2">💗</div>
+    <div class="heart h3">❤️</div>
+    <div class="heart h4">💖</div>
+    <div class="heart h5">💕</div>
+
+    <div class="message">
+        <h1>Welcome to Our Story ❤️</h1>
+        <p>Sometimes the most beautiful journeys<br>begin with a leap of faith.</p>
+
+        <button class="enter" onclick="enterStory()">
+            Enter Our Story ❤️
+        </button>
+    </div>
+
+    <div class="fade" id="fade"></div>
+
+</div>
+
+<script>
+const scene = document.querySelector(".scene");
+const person = document.getElementById("fallingPerson");
+const message = document.querySelector(".message");
+
+setTimeout(function(){
+    scene.classList.add("shake");
+
+    setTimeout(function(){
+        scene.classList.remove("shake");
+    },700);
+},7000);
+
+setTimeout(function(){
+    message.classList.add("dramatic");
+},9500);
+
+function enterStory(){
+    document.getElementById("fade").classList.add("active");
+
+    setTimeout(function(){
+        window.location.href="story.html";
+    },1200);
+}
+
+</script>
+
+</body>
+</html>
+
+<style>
+.person{
+    left:50% !important;
+    top:30% !important;
+    transform:translate(-50%,-50%) !important;
+}
+</style>

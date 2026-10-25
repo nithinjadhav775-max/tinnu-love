@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little World ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Georgia,"Times New Roman",serif;
+  color:#fff;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(255,80,140,.25),transparent 30%),
+    radial-gradient(circle at 80% 40%,rgba(150,70,255,.20),transparent 30%),
+    linear-gradient(135deg,#09000d,#180015 45%,#050008);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* floating hearts */
+.heart{
+  position:fixed;
+  bottom:-40px;
+  color:#ff6b9d;
+  font-size:20px;
+  pointer-events:none;
+  animation:floatHeart linear forwards;
+  z-index:1;
+  opacity:.75;
+}
+
+@keyframes floatHeart{
+  0%{
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
+  }
+  15%{opacity:.8}
+  100%{
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
+  }
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px 20px;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  width:350px;
+  height:350px;
+  background:#ff2f75;
+  filter:blur(120px);
+  opacity:.18;
+  border-radius:50%;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:850px;
+}
+
+.small{
+  letter-spacing:5px;
+  text-transform:uppercase;
+  color:#ffb6ce;
+  font-size:13px;
+  margin-bottom:22px;
+}
+
+h1{
+  font-size:clamp(55px,12vw,120px);
+  line-height:.9;
+  background:linear-gradient(90deg,#fff,#ff9fc2,#fff);
+  -webkit-background-clip:text;
+  color:transparent;
+  text-shadow:0 0 40px rgba(255,70,130,.25);
+  margin-bottom:25px;
+}
+
+.hero p{
+  font-size:clamp(18px,3vw,25px);
+  color:#f9dce7;
+  line-height:1.7;
+}
+
+.scroll{
+  display:inline-block;
+  margin-top:45px;
+  padding:14px 25px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:50px;
+  color:#fff;
+  text-decoration:none;
+  backdrop-filter:blur(10px);
+  background:rgba(255,255,255,.06);
+  transition:.3s;
+}
+
+.scroll:hover{
+  transform:translateY(-4px);
+  background:rgba(255,80,130,.2);
+}
+
+/* general */
+section{
+  width:min(1100px,92%);
+  margin:auto;
+  padding:90px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  font-size:clamp(35px,6vw,60px);
+  margin-bottom:12px;
+}
+
+.section-title p{
+  color:#dcb9c8;
+  font-size:17px;
+}
+
+/* glass card */
+.card{
+  background:rgba(255,255,255,.065);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:28px;
+  padding:35px;
+  backdrop-filter:blur(18px);
+  box-shadow:0 20px 70px rgba(0,0,0,.35);
+}
+
+/* letter */
+.letter{
+  max-width:850px;
+  margin:auto;
+  line-height:2;
+  font-size:19px;
+  color:#f9e9ef;
+}
+
+.letter .opening{
+  font-size:28px;
+  color:#ff9fbd;
+  margin-bottom:20px;
+}
+
+/* music */
+.music-card{
+  max-width:750px;
+  margin:auto;
+  text-align:center;
+}
+
+.music-icon{
+  font-size:65px;
+  margin-bottom:15px;
+  animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+  50%{transform:scale(1.08)}
+}
+
+.music-card h3{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.music-card p{
+  color:#dcb9c8;
+  margin-bottom:25px;
+}
+
+audio{
+  width:100%;
+  border-radius:15px;
+}
+
+.play-btn{
+  margin-top:20px;
+  border:0;
+  padding:16px 30px;
+  border-radius:50px;
+  background:linear-gradient(90deg,#ff397c,#ff78a7);
+  color:#fff;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+  box-shadow:0 10px 35px rgba(255,40,110,.3);
+}
+
+/* gallery */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.photo-card{
+  position:relative;
+  padding:12px;
+  border-radius:25px;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.13);
+  box-shadow:0 15px 45px rgba(0,0,0,.35);
+  transition:.4s;
+}
+
+.photo-card:hover{
+  transform:translateY(-8px) scale(1.015);
+  box-shadow:0 20px 60px rgba(255,50,120,.18);
+}
+
+.photo-card img{
+  width:100%;
+  height:auto;
+  max-height:700px;
+  display:block;
+  object-fit:contain;
+  border-radius:18px;
+  background:#09040a;
+}
+
+.caption{
+  text-align:center;
+  padding:15px 5px 8px;
+  color:#ffd7e5;
+  font-size:15px;
+}
+
+/* quote */
+.quote{
+  text-align:center;
+  font-size:clamp(25px,5vw,45px);
+  line-height:1.4;
+  color:#ffe4ed;
+}
+
+.quote span{
+  color:#ff6f9e;
+}
+
+/* surprise */
+.surprise{
+  text-align:center;
+}
+
+.big-heart{
+  font-size:100px;
+  animation:heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat{
+  0%,100%{transform:scale(1)}
+  15%{transform:scale(1.15)}
+  30%{transform:scale(1)}
+  45%{transform:scale(1.12)}
+}
+
+.surprise button{
+  margin-top:25px;
+  padding:17px 35px;
+  border:none;
+  border-radius:50px;
+  background:#fff;
+  color:#d91861;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+#message{
+  display:none;
+  margin-top:30px;
+  font-size:25px;
+  line-height:1.6;
+  color:#ffd2e0;
+}
+
+/* footer */
+footer{
+  text-align:center;
+  padding:70px 20px 45px;
+  color:#b998a6;
+}
+
+footer strong{
+  color:#ff91b3;
+}
+
+/* mobile */
+@media(max-width:700px){
+  section{
+    padding:65px 0;
+  }
+
+  .card{
+    padding:23px;
+    border-radius:22px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+    gap:22px;
+  }
+
+  .photo-card img{
+    max-height:none;
+  }
+
+  .letter{
+    font-size:17px;
+    line-height:1.85;
+  }
+
+  .hero{
+    min-height:92vh;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <div class="small">A little corner of my heart</div>
+    <h1>For Tinnu ❤️</h1>
+    <p>
+      Some people become memories.<br>
+      Some people become a beautiful part of your life.
+    </p>
+    <a class="scroll" href="#letter">Come inside our little world ↓</a>
+  </div>
+</header>
+
+<!-- LETTER -->
+<section id="letter">
+  <div class="section-title">
+    <h2>A Letter For You 💌</h2>
+    <p>Things I don't always know how to say</p>
+  </div>
+
+  <div class="card letter">
+    <div class="opening">Dear Tinnu,</div>
+
+    I don't know exactly when you became so important to me.
+    Maybe it happened slowly, through the little conversations,
+    the smiles, the memories and all those tiny moments that
+    somehow stayed in my heart.
+
+    <br><br>
+
+    When I look at these pictures, I don't just see photographs.
+    I see moments. I see a person who makes ordinary memories
+    feel special.
+
+    <br><br>
+
+    I may not always have the perfect words, but one thing is
+    simple — having you in my life means more to me than I can
+    properly explain.
+
+    <br><br>
+
+    So I made this little website just for you.
+    Not because a website can explain everything I feel,
+    but because I wanted to create one small place where
+    our memories could stay.
+
+    <br><br>
+
+    <strong style="color:#ff8faf">
+      If you ever forget how special you are to me,
+      come back here. ❤️
+    </strong>
+
+    <br><br>
+
+    — Nithin
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section>
+  <div class="section-title">
+    <h2>Our Song 🎵</h2>
+    <p>Put your headphones on and stay here for a moment.</p>
+  </div>
+
+  <div class="card music-card">
+    <div class="music-icon">🎧</div>
+    <h3>Just You & This Song</h3>
+    <p>Tap play below — the browser will start the music only after your click.</p>
+
+    <audio id="music" controls preload="metadata" playsinline>
+      <source src="love-song.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+
+    <button class="play-btn" onclick="playSong()">❤️ Play Our Song</button>
+
+    <p id="audioStatus" style="margin-top:15px;font-size:14px;"></p>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section>
+  <div class="card quote">
+    “Among all the moments life gives us,
+    <span>some people become the moment we never want to lose.</span>”
+  </div>
+</section>
+
+<!-- MEMORIES -->
+<section id="memories">
+  <div class="section-title">
+    <h2>Our Memories 📸</h2>
+    <p>Every picture has a little story behind it.</p>
+  </div>
+
+  <div class="gallery">
+
+    <div class="photo-card">
+      <img src="photos/photo1.jpg" alt="Memory 1">
+      <div class="caption">A moment worth remembering ❤️</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo2.jpg" alt="Memory 2">
+      <div class="caption">One more beautiful memory ✨</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo3.jpg" alt="Memory 3">
+      <div class="caption">That smile ❤️</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo4.jpg" alt="Memory 4">
+      <div class="caption">A little piece of happiness 🌸</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo5.jpg" alt="Memory 5">
+      <div class="caption">Another page of our story 💕</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo6.jpg" alt="Memory 6">
+      <div class="caption">Beautiful just as you are ✨</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo7.jpg" alt="Memory 7">
+      <div class="caption">A memory I would keep forever ❤️</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo8.jpg" alt="Memory 8">
+      <div class="caption">One more reason to smile 🌙</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo9.jpg" alt="Memory 9">
+      <div class="caption">You looked beautiful here 💙</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo10.jpg" alt="Memory 10">
+      <div class="caption">A colorful little memory 🌈</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo11.jpg" alt="Memory 11">
+      <div class="caption">A smile I want to remember ✨</div>
+    </div>
+
+    <div class="photo-card">
+      <img src="photos/photo12.jpg" alt="Memory 12">
+      <div class="caption">Another beautiful day ❤️</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SURPRISE -->
+<section>
+  <div class="card surprise">
+    <div class="big-heart">❤️</div>
+
+    <div class="section-title" style="margin-bottom:0">
+      <h2>One Last Thing...</h2>
+      <p>Before you leave, press this.</p>
+    </div>
+
+    <button onclick="showMessage()">Open My Heart 💗</button>
+
+    <div id="message">
+      No matter how many pictures I put here,<br>
+      they still can't capture everything you mean to me.<br><br>
+      <strong>You are one of my favorite parts of life. ❤️</strong>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Made with ❤️ by <strong>Nithin</strong><br>
+  <span>For someone very special — Tinnu.</span>
+</footer>
+
+<script>
+/* music */
+function playSong(){
+  const music=document.getElementById("music");
+  const status=document.getElementById("audioStatus");
+
+  music.play().then(()=>{
+    status.textContent="🎵 Playing...";
+    status.style.color="#ff9fbd";
+  }).catch(()=>{
+    status.textContent="Tap the ▶ button on the audio player above.";
+    status.style.color="#ffb6ce";
+  });
+}
+
+/* surprise */
+function showMessage(){
+  const msg=document.getElementById("message");
+  msg.style.display="block";
+
+  for(let i=0;i<25;i++){
+    setTimeout(createHeart,i*80);
+  }
+}
+
+/* floating hearts */
+function createHeart(){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.textContent=["❤️","💕","💗","💖","✨"][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+"vw";
+  h.style.fontSize=(14+Math.random()*25)+"px";
+  h.style.animationDuration=(5+Math.random()*5)+"s";
+  document.body.appendChild(h);
+
+  setTimeout(()=>{
+    h.remove();
+  },10000);
+}
+
+setInterval(createHeart,900);
+</script>
+
+</body>
+</html>

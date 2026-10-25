@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tinnu ❤️</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  background:#07030a;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(255,30,100,.20),transparent 35%),
+    radial-gradient(circle at 80% 70%,rgba(150,30,255,.18),transparent 35%),
+    linear-gradient(135deg,#050207,#180613,#050207);
+}
+
+#hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:50;
+  overflow:hidden;
+}
+
+.heart{
+  position:absolute;
+  bottom:-50px;
+  animation:floatUp 6s linear forwards;
+  font-size:22px;
+}
+
+@keyframes floatUp{
+  from{transform:translateY(0) rotate(0);opacity:0}
+  15%{opacity:1}
+  to{transform:translateY(-115vh) rotate(360deg);opacity:0}
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px 20px;
+}
+
+.hero-box{
+  max-width:850px;
+  animation:hero 1.5s ease;
+}
+
+@keyframes hero{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:none}
+}
+
+.small{
+  letter-spacing:5px;
+  color:#ff9dbd;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+h1{
+  font-size:clamp(48px,12vw,100px);
+  margin-bottom:15px;
+  text-shadow:0 0 30px rgba(255,70,130,.7);
+}
+
+.hero p{
+  color:#ddd;
+  font-size:18px;
+  line-height:1.8;
+  max-width:650px;
+  margin:auto;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:15px 28px;
+  border:1px solid rgba(255,120,160,.7);
+  border-radius:50px;
+  background:rgba(255,50,110,.15);
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  text-decoration:none;
+  box-shadow:0 0 25px rgba(255,50,110,.25);
+}
+
+.btn:active{transform:scale(.96)}
+
+section{
+  width:min(950px,92%);
+  margin:0 auto;
+  padding:90px 0;
+}
+
+.card{
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:28px;
+  padding:35px 25px;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+.title{
+  text-align:center;
+  font-size:clamp(30px,7vw,50px);
+  margin-bottom:15px;
+}
+
+.subtitle{
+  text-align:center;
+  color:#bbb;
+  margin-bottom:35px;
+  line-height:1.7;
+}
+
+.letter{
+  font-size:18px;
+  line-height:2;
+  color:#eee;
+}
+
+.letter p{margin-bottom:22px}
+
+.music{text-align:center}
+
+.music-icon{
+  font-size:60px;
+  margin-bottom:15px;
+}
+
+#musicButton{
+  border:0;
+  background:linear-gradient(135deg,#ff477e,#a52cff);
+  color:white;
+  padding:16px 30px;
+  border-radius:50px;
+  font-size:17px;
+  cursor:pointer;
+}
+
+.player{
+  margin-top:25px;
+}
+
+input[type=range]{
+  width:100%;
+  accent-color:#ff477e;
+}
+
+.time{
+  display:flex;
+  justify-content:space-between;
+  color:#aaa;
+  font-size:13px;
+  margin-top:8px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:18px;
+}
+
+.photo{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.12);
+  transition:.4s;
+}
+
+.photo:hover{
+  transform:scale(1.025);
+  box-shadow:0 0 30px rgba(255,50,120,.35);
+}
+
+.question{text-align:center}
+
+.answer{
+  display:none;
+  margin-top:25px;
+  color:#ffb1c9;
+  font-size:22px;
+  line-height:1.7;
+}
+
+.secret{
+  text-align:center;
+}
+
+#secretBox{
+  display:none;
+  margin-top:25px;
+  color:#ffd1df;
+  font-size:20px;
+  line-height:1.8;
+}
+
+.password{
+  width:100%;
+  max-width:300px;
+  padding:14px;
+  border-radius:30px;
+  border:1px solid #73334d;
+  background:#12070e;
+  color:white;
+  text-align:center;
+  outline:none;
+}
+
+footer{
+  text-align:center;
+  padding:60px 20px;
+  color:#888;
+}
+
+@media(max-width:600px){
+  section{padding:65px 0}
+  .card{padding:25px 18px}
+  .gallery{grid-template-columns:1fr}
+  .letter{font-size:17px}
+}
+</style>
+</head>
+
+<body>
+
+<div id="hearts"></div>
+
+<header class="hero">
+  <div class="hero-box">
+    <div class="small">A LITTLE SOMETHING FOR</div>
+
+    <h1>Tinnu ❤️</h1>
+
+    <p>
+      Some people enter our life quietly,
+      and somehow become one of the most
+      beautiful parts of it.
+    </p>
+
+    <a class="btn" href="#letter">Open My Heart ↓</a>
+  </div>
+</header>
+
+<section id="letter">
+  <div class="card">
+    <h2 class="title">A Letter For You 💌</h2>
+
+    <p class="subtitle">Things I don't always know how to say.</p>
+
+    <div class="letter">
+      <p>
+        Tinnu, I don't know exactly when you became so important to me.
+        Somewhere between our conversations, our memories and all those
+        little moments, you became someone I never want to lose.
+      </p>
+
+      <p>
+        You make ordinary days feel different. Even a small conversation
+        with you can stay in my mind for a long time.
+      </p>
+
+      <p>
+        I may not always have the perfect words, but one thing is real:
+        I genuinely care about you, and I'm grateful for every memory
+        we've created.
+      </p>
+
+      <p>
+        So this little website is just my way of saying something simple...
+        <br><br>
+        <strong>You are special to me. ❤️</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="song">
+  <div class="card music">
+    <div class="music-icon">🎵</div>
+
+    <h2 class="title">Our Song</h2>
+
+    <p class="subtitle">
+      Put your headphones on and listen to this little moment.
+    </p>
+
+    <audio id="music" preload="metadata" src="love-song.mp3"></audio>
+
+    <button id="musicButton" onclick="toggleMusic()">
+      ▶️ Play Our Song
+    </button>
+
+    <div class="player">
+      <input id="progress" type="range" min="0" max="100" value="0">
+
+      <div class="time">
+        <span id="current">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="memories">
+  <div class="card">
+    <h2 class="title">Our Little Memories 📸</h2>
+
+    <p class="subtitle">
+      Eight moments, eight little pieces of a story.
+    </p>
+
+    <div class="gallery">
+      <img class="photo" src="photos/photo1.jpg" alt="Memory 1">
+      <img class="photo" src="photos/photo2.jpg" alt="Memory 2">
+      <img class="photo" src="photos/photo3.jpg" alt="Memory 3">
+      <img class="photo" src="photos/photo4.jpg" alt="Memory 4">
+      <img class="photo" src="photos/photo5.jpg" alt="Memory 5">
+      <img class="photo" src="photos/photo6.jpg" alt="Memory 6">
+      <img class="photo" src="photos/photo7.jpg" alt="Memory 7">
+      <img class="photo" src="photos/photo8.jpg" alt="Memory 8">
+    </div>
+  </div>
+</section>
+
+<section id="question">
+  <div class="card question">
+    <h2 class="title">One Little Question... ❤️</h2>
+
+    <p class="subtitle">
+      No pressure. Just answer from your heart.
+    </p>
+
+    <button class="btn" onclick="yesAnswer()">Yes ❤️</button>
+    <button class="btn" onclick="maybeAnswer()">Maybe 🙈</button>
+
+    <div id="answer" class="answer"></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="card secret">
+    <h2 class="title">Secret Place 🔐</h2>
+
+    <p class="subtitle">
+      There is a little message hidden here.
+    </p>
+
+    <input
+      id="password"
+      class="password"
+      type="password"
+      placeholder="Enter password"
+    >
+
+    <br>
+
+    <button class="btn" onclick="unlockSecret()">Unlock ❤️</button>
+
+    <div id="secretBox">
+      You found it. 🥹❤️<br><br>
+      If you are reading this, just know that
+      someone somewhere made this entire little world
+      because you matter to him.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card question">
+    <h2 class="title">For You, Tinnu ❤️</h2>
+
+    <p class="subtitle">
+      Thank you for being a beautiful part of my story.
+    </p>
+
+    <button class="btn" onclick="heartExplosion()">
+      Send Some Love 💕
+    </button>
+  </div>
+</section>
+
+<footer>
+  Made with love ❤️
+</footer>
+
+<script>
+const music=document.getElementById("music");
+const musicButton=document.getElementById("musicButton");
+const progress=document.getElementById("progress");
+const current=document.getElementById("current");
+const duration=document.getElementById("duration");
+
+function formatTime(seconds){
+  if(!Number.isFinite(seconds)) return "0:00";
+  const m=Math.floor(seconds/60);
+  const s=Math.floor(seconds%60).toString().padStart(2,"0");
+  return m+":"+s;
+}
+
+function toggleMusic(){
+  if(music.paused){
+    music.play().then(()=>{
+      musicButton.textContent="⏸️ Pause Our Song";
+    }).catch(()=>{
+      musicButton.textContent="▶️ Tap Again To Play";
+    });
+  }else{
+    music.pause();
+    musicButton.textContent="▶️ Play Our Song";
+  }
+}
+
+music.addEventListener("loadedmetadata",()=>{
+  duration.textContent=formatTime(music.duration);
+});
+
+music.addEventListener("timeupdate",()=>{
+  current.textContent=formatTime(music.currentTime);
+
+  if(music.duration){
+    progress.value=(music.currentTime/music.duration)*100;
+  }
+});
+
+progress.addEventListener("input",()=>{
+  if(music.duration){
+    music.currentTime=(progress.value/100)*music.duration;
+  }
+});
+
+music.addEventListener("play",()=>{
+  musicButton.textContent="⏸️ Pause Our Song";
+});
+
+music.addEventListener("pause",()=>{
+  musicButton.textContent="▶️ Play Our Song";
+});
+
+music.addEventListener("ended",()=>{
+  musicButton.textContent="▶️ Play Our Song";
+  progress.value=0;
+});
+
+function yesAnswer(){
+  const box=document.getElementById("answer");
+  box.style.display="block";
+  box.innerHTML=
+    "You just made this little website even more special. ❤️<br><br>Thank you, Tinnu. 🥹";
+  heartExplosion();
+}
+
+function maybeAnswer(){
+  const box=document.getElementById("answer");
+  box.style.display="block";
+  box.innerHTML=
+    "I'll take that little maybe... for now. 🙈❤️";
+}
+
+function unlockSecret(){
+  const value=document.getElementById("password").value.toLowerCase().trim();
+
+  if(value==="tinnu"){
+    document.getElementById("secretBox").style.display="block";
+    heartExplosion();
+  }else{
+    alert("Wrong password ❤️ Try again.");
+  }
+}
+
+function createHeart(){
+  const h=document.createElement("div");
+  h.className="heart";
+
+  const symbols=["❤️","💕","💗","💖","💘","🌹"];
+  h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+
+  h.style.left=Math.random()*100+"%";
+  h.style.fontSize=(16+Math.random()*25)+"px";
+  h.style.animationDuration=(4+Math.random()*4)+"s";
+
+  document.getElementById("hearts").appendChild(h);
+
+  setTimeout(()=>h.remove(),8000);
+}
+
+function heartExplosion(){
+  for(let i=0;i<35;i++){
+    setTimeout(createHeart,i*60);
+  }
+}
+
+setInterval(createHeart,1200);
+</script>
+
+</body>
+</html>
